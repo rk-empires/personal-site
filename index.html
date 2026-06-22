@@ -88,6 +88,7 @@
     @media (max-width: 1024px) {
       .rk-work-card { flex-basis: calc(50% - 11px) !important; }
       .rk-skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .rk-skills-grid > *:last-child:nth-child(odd) { grid-column: span 2; max-width: 50%; justify-self: start; }
     }
     @media (max-width: 768px) {
       .rk-nav-links   { display: none !important; }
@@ -208,9 +209,9 @@
     </div>
 
     <div class="rk-hero-animate" style="animation-delay: 0.58s;">
-      <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-btn-gold" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 38px; background: linear-gradient(135deg, #7A5507 0%, #B8860B 15%, #D4AF37 32%, #F5E070 50%, #ECC84A 60%, #D4AF37 72%, #9A6F09 88%, #C8A42A 100%); border-radius: 9999px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #0D0D0D; letter-spacing: 0.15em; text-transform: uppercase; box-shadow: 0 4px 24px rgba(212,175,55,0.32), 0 1px 0 rgba(255,255,255,0.18) inset;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        View Resume
+      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download class="rk-btn-gold" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 38px; background: linear-gradient(135deg, #7A5507 0%, #B8860B 15%, #D4AF37 32%, #F5E070 50%, #ECC84A 60%, #D4AF37 72%, #9A6F09 88%, #C8A42A 100%); border-radius: 9999px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #0D0D0D; letter-spacing: 0.15em; text-transform: uppercase; box-shadow: 0 4px 24px rgba(212,175,55,0.32), 0 1px 0 rgba(255,255,255,0.18) inset;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17V3"/><polyline points="7 12 12 17 17 12"/><rect x="3" y="19" width="18" height="2" rx="1"/></svg>
+        Download Resume
       </a>
     </div>
 
@@ -239,10 +240,10 @@
 
       <div>
         <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.64); line-height: 1.84; margin-bottom: 22px;">
-          I'm an AI Automation Specialist and IT Operations professional with 7+ years of experience building systems that remove repetitive work and improve how teams operate. My work spans AI workflows, API integrations, CRM automation, chatbot deployment, and enterprise IT support — with strong exposure to real estate lead marketing systems and full-stack automation pipelines.
+          Results-driven AI Automation Specialist and IT Operations professional with 7+ years of experience building intelligent systems that eliminate repetitive work. Expert in deploying automation workflows, API integrations, and cross-platform solutions — from CRM pipelines and chatbots to full-stack web deployments — with a proven track record across real estate marketing, enterprise IT, and B2B support environments.
         </p>
         <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.64); line-height: 1.84;">
-          I focus on building end-to-end solutions that actually run in production — not just prototypes. I enjoy connecting tools, simplifying complex processes, and turning manual operations into reliable automated systems. I'm currently looking for roles where I can build scalable automation, integration-heavy systems, and operational tools that improve business efficiency.
+          I build end-to-end systems that actually run in production. From website creation and AI automation workflows to API integration, data syncing, CRM pipelines, and enterprise IT operations — I connect tools, simplify complex processes, and turn manual operations into reliable automated systems that improve business efficiency at scale.
         </p>
       </div>
 
@@ -270,23 +271,27 @@
 
         <!-- 01 -->
         <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
-          <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
-            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
-            <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">01</span>
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+          <div class="rk-screenshot-wrap" style="aspect-ratio: 16/9; background: #111; border-bottom: 1px solid rgba(255,255,255,0.04);">
+            <img src="project/uploads/screenshot-p1.jpg" alt="RK Empires AI Automation Landing Page screenshot"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="rk-screenshot-placeholder" style="display: none; background: #111;">
+              <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+              <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">01</span>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+            </div>
           </div>
           <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
             <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">01</span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">AI Product Landing Page</h3>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Modern product landing page with AI-driven UX flow and embedded video hero for marketing conversion optimization.</p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">RK Empires — AI Automation Site</h3>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Bold enterprise landing page for RK Empires showcasing intelligent automation services — built with Claude Code, deployed on Vercel.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Claude Code</span>
               <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Vercel</span>
               <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">UI/UX</span>
               <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Web Animation</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Product Design</span>
             </div>
             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
-              <a href="https://rk-empires.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
                 View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -295,22 +300,27 @@
 
         <!-- 02 -->
         <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
-          <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
-            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
-            <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">02</span>
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+          <div class="rk-screenshot-wrap" style="aspect-ratio: 16/9; background: #111; border-bottom: 1px solid rgba(255,255,255,0.04);">
+            <img src="project/uploads/screenshot-p2.jpg" alt="TESTER titanium watch product page screenshot"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="rk-screenshot-placeholder" style="display: none; background: #111;">
+              <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+              <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">02</span>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+            </div>
           </div>
           <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
             <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">02</span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">3D Scroll Animation Experience</h3>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Interactive scroll-based animation experience showcasing advanced UI transitions and storytelling-based product navigation.</p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">TESTER — Titanium Watch Product Page</h3>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Premium product page for a titanium smartwatch with 3D scroll animation, luxury UI, and conversion-focused layout built with Claude Code.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Scroll Effects</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">UX Motion</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Web Interactivity</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Claude Code</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Vercel</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Product Design</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">3D Scroll</span>
             </div>
             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
-              <a href="https://arca-product.vercel.app/anything" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
                 View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -320,7 +330,7 @@
         <!-- 03 -->
         <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
           <div class="rk-screenshot-wrap" style="aspect-ratio: 16/9; background: #111; border-bottom: 1px solid rgba(255,255,255,0.04);">
-            <img src="project/uploads/screenshot-p3.png" alt="Admin Dashboard System screenshot"
+            <img src="project/uploads/screenshot-p3.jpg" alt="RK Empires AI Learning App screenshot"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="rk-screenshot-placeholder" style="display: none; background: #111;">
               <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
@@ -330,15 +340,16 @@
           </div>
           <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
             <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">03</span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">Admin Dashboard System</h3>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Admin dashboard for managing backend data, users, and system workflows with structured control and monitoring features.</p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">RK Empires AI Learning App</h3>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Daily AI micro-lesson app — "Learn AI from zero, one lesson a day." Structured curriculum deployed on Railway with Replit backend integration.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Dashboard UI</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">System Design</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Admin Tools</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Claude Code</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Railway</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Replit</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">App Design</span>
             </div>
             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
-              <a href="https://arca-product.vercel.app/admin" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
                 View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -347,22 +358,27 @@
 
         <!-- 04 -->
         <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
-          <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
-            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
-            <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">04</span>
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+          <div class="rk-screenshot-wrap" style="aspect-ratio: 16/9; background: #111; border-bottom: 1px solid rgba(255,255,255,0.04);">
+            <img src="project/uploads/screenshot-p4.jpg" alt="Intelligent Business Automation site screenshot"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="rk-screenshot-placeholder" style="display: none; background: #111;">
+              <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+              <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">04</span>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+            </div>
           </div>
           <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
             <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">04</span>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">Contact &amp; Lead Capture Automation</h3>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Lead capture system with form handling, CRM routing, and backend automation for real-time inquiry processing.</p>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">Intelligent Business Automation</h3>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Enterprise automation services site — "Intelligent automations for businesses ready to scale." N8N + GoHighLevel workflows with full CRM integration.</p>
             <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Form Automation</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">N8N</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">GoHighLevel</span>
+              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">WordPress</span>
               <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">CRM Integration</span>
-              <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Webhooks</span>
             </div>
             <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
-              <a href="https://arca-product.vercel.app/product#contact" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
                 View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </div>
@@ -404,61 +420,91 @@
 
     <div class="rk-skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
 
-      <!-- AI & Automation -->
+      <!-- AI -->
       <div class="rk-reveal-scale rk-d1" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
           <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">AI &amp; Automation</h3>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">AI</h3>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 7px;">
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ChatGPT / Claude AI</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">n8n</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Make</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GoHighLevel</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Zoho One</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">API Automation</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Chatbot Systems</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Workflow Design</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Claude AI</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ChatGPT</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Gemini Pro</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Windsurf</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Codex</span>
         </div>
       </div>
 
-      <!-- IT Operations -->
+      <!-- Automation -->
       <div class="rk-reveal-scale rk-d2" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
           <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           </div>
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">IT Operations &amp; Systems</h3>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">Automation</h3>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 7px;">
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Active Directory / Azure</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Microsoft O365</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ServiceNow</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Citrix / VMware</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">SAP</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">MFA Systems</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Enterprise IT Support</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">N8N</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Make</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GoHighLevel</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Zoho One</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Mailchimp</span>
         </div>
       </div>
 
-      <!-- Dev & Integrations -->
+      <!-- Dev & Deploy -->
       <div class="rk-reveal-scale rk-d3" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
           <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 3-7 9 7 9"/><path d="m14 3 7 9-7 9"/></svg>
           </div>
-          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">Development &amp; Integrations</h3>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">Dev &amp; Deploy</h3>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 7px;">
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GitHub / Replit</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Railway / Vercel</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">WordPress</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Replit</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Railway</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GitHub</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Vercel</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Render</span>
           <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Airtable</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">API Integration</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">CRM &amp; Email Automation</span>
-          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Data Syncing</span>
+        </div>
+      </div>
+
+      <!-- IT & Systems -->
+      <div class="rk-reveal-scale rk-d4" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">IT &amp; Systems</h3>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Active Directory</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Azure</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">O365</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ServiceNow</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Citrix</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">VMware</span>
+        </div>
+      </div>
+
+      <!-- CMS & Support -->
+      <div class="rk-reveal-scale rk-d5" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">CMS &amp; Support</h3>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">WordPress</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">WooCommerce</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Zendesk</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Desk365</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Bomgar</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">TeamViewer</span>
         </div>
       </div>
 
@@ -492,7 +538,19 @@
             </div>
             <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Nov 2025 – May 2026</span>
           </div>
-          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Real Estate Lead Marketing — Built AI-driven marketing automation using GoHighLevel, n8n, Zoho, and Make. Developed API-based systems integrating Microsoft Graph, Airtable, and email automation for lead nurturing and subscription workflows.</p>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Real estate lead marketing automation — built end-to-end AI workflows for lead nurturing, CRM pipelines, and email subscription systems. Integrated Microsoft Graph API, Airtable, and multi-platform email sequences for automated outreach at scale.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">GoHighLevel</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">N8N</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Make</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Zoho One</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Mailchimp</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">MS Graph API</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">WordPress</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Claude AI</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Replit</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Railway</span>
+          </div>
         </div>
       </div>
 
@@ -507,7 +565,18 @@
             </div>
             <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Jan 2023 – Jul 2025</span>
           </div>
-          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Enterprise IT support across Active Directory, Azure, O365, VPN, and ServiceNow. Managed onboarding/offboarding, access control, incident resolution, and system administration for global corporate users.</p>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Enterprise IT support for global clients including Analog Devices Inc., Chipotle, and Singapore Airlines. Managed onboarding/offboarding, access provisioning, MFA administration (RSA/Duo), MDM, VPN, and incident resolution via ServiceNow.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">ServiceNow</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Active Directory</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Azure</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">O365</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Citrix</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">VPN</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">SAP</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">RSA / Duo MFA</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">MDM</span>
+          </div>
         </div>
       </div>
 
@@ -522,7 +591,14 @@
             </div>
             <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Dec 2021 – Dec 2022</span>
           </div>
-          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Supported NCR Aloha POS systems for enterprise clients including hardware, network, and software troubleshooting. Led escalation support and maintained technical documentation for service desk operations.</p>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Subject matter expert for NCR Aloha POS (Menu Link) across enterprise restaurant and retail clients. Handled hardware, network, and software troubleshooting, led escalation support, and maintained documentation via ServiceNow and ConnectWise.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">NCR Aloha POS</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">ServiceNow</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">ConnectWise</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Active Directory</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">PRISMA SD-WAN</span>
+          </div>
         </div>
       </div>
 
@@ -537,7 +613,14 @@
             </div>
             <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Mar 2021 – Nov 2021</span>
           </div>
-          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Provided IT support for corporate users covering SAP, Active Directory, and remote access systems. Resolved incidents, password issues, and access requests through ServiceNow ticketing.</p>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">IT support for IBM corporate user base — SAP access, Active Directory administration, remote access troubleshooting (RSA, MDM), and incident management via ServiceNow ticketing system.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">ServiceNow</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Active Directory</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">SAP</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">RSA</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">MDM</span>
+          </div>
         </div>
       </div>
 
@@ -552,7 +635,12 @@
             </div>
             <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Feb 2018 – Mar 2021</span>
           </div>
-          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Delivered B2C and B2B technical support for antivirus and CRM platforms. Assisted users with system troubleshooting, CRM setup, email workflows, and connectivity issues.</p>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">B2C and B2B technical support for antivirus and CRM software platforms. Assisted customers with system troubleshooting, software installation, CRM configuration, email workflows, and account/connectivity issues over phone and chat.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">CRM Support</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Antivirus Platforms</span>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 600; color: rgba(212,175,55,0.6); background: rgba(212,175,55,0.06); border: 1px solid rgba(212,175,55,0.14); border-radius: 4px; padding: 3px 8px;">Technical Troubleshooting</span>
+          </div>
         </div>
       </div>
 
@@ -635,15 +723,18 @@
 
       <!-- Right: Arca attribution -->
       <div class="rk-footer-right" style="display: flex; flex-direction: column; align-items: flex-end; gap: 20px;">
-        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;">
-          <img src="project/uploads/pasted-1782125391007-0.png" alt="Arca logo" style="height: 38px; width: auto; object-fit: contain;">
+        <a href="https://arca.ph" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; transition: border-color 0.2s, background 0.2s; text-decoration: none;" onmouseover="this.style.background='rgba(255,255,255,0.06)';this.style.borderColor='rgba(255,255,255,0.12)';" onmouseout="this.style.background='rgba(255,255,255,0.03)';this.style.borderColor='rgba(255,255,255,0.06)';">
+          <img src="images/arca-logo.png" alt="Arca logo" style="height: 28px; width: auto; object-fit: contain;">
           <div>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.06em;">Made for Arca.ph</p>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 0.04em; margin-top: 2px;">Arca Academy Capstone</p>
           </div>
-        </div>
+        </a>
       </div>
 
+    </div>
+    <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04); text-align: center;">
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.16); letter-spacing: 0.08em;">&copy; 2026 Raiven Kaizer Moreno · RK Empires</p>
     </div>
   </div>
 </footer>
