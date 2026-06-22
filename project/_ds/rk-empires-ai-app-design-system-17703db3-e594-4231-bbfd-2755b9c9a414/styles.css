@@ -1,0 +1,10 @@
+/* ============================================================
+   RK Empires Intelligent Automations — Design System
+   Root stylesheet — @import only, no inline rules
+   ============================================================ */
+
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/effects.css';
+@import './tokens/animation.css';

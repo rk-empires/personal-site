@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/tokens/animation.css">
+  <link rel="stylesheet" href="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/styles.css">
+  <script src="_ds/rk-empires-ai-app-design-system-17703db3-e594-4231-bbfd-2755b9c9a414/_ds_bundle.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #0D0D0D; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+    ::selection { background: rgba(212,175,55,0.28); color: #fff; }
+    a { text-decoration: none; color: inherit; }
+
+    .rk-nav { transition: background 0.35s ease, box-shadow 0.35s ease; }
+    .rk-nav.rk-scrolled { background: rgba(9,9,9,0.93) !important; box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 6px 32px rgba(0,0,0,0.55) !important; }
+    .rk-nav-link { opacity: 0.52; transition: opacity 0.2s, color 0.2s; }
+    .rk-nav-link:hover { opacity: 1 !important; color: #D4AF37 !important; }
+    .rk-btn-gold { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .rk-btn-gold:hover { transform: translateY(-2px) !important; box-shadow: 0 10px 40px rgba(212,175,55,0.52) !important; }
+    .rk-btn-gold:active { transform: scale(0.97) !important; }
+    .rk-work-card { transition: transform 0.26s ease, box-shadow 0.26s ease; }
+    .rk-work-card:hover { transform: translateY(-6px) !important; box-shadow: 0 20px 56px rgba(0,0,0,0.72), 0 0 0 1px rgba(212,175,55,0.22) !important; }
+    .rk-tag { transition: background 0.18s, color 0.18s; cursor: default; }
+    .rk-tag:hover { background: rgba(212,175,55,0.18) !important; color: #D4AF37 !important; }
+    .rk-work-link { transition: color 0.18s, opacity 0.18s; }
+    .rk-work-link:hover { color: #D4AF37 !important; opacity: 1 !important; }
+    .rk-footer-link { transition: color 0.18s, opacity 0.18s; opacity: 0.42; }
+    .rk-footer-link:hover { color: #D4AF37 !important; opacity: 1 !important; }
+    .rk-edu-card { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .rk-edu-card:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,55,0.18) !important; }
+
+    @keyframes rk-fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1024px) {
+      .rk-work-track .rk-work-card { flex-basis: calc(50% - 11px) !important; }
+      .rk-skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 768px) {
+      .rk-nav-links { display: none !important; }
+      .rk-about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .rk-work-track .rk-work-card { flex-basis: 100% !important; }
+      .rk-skills-grid { grid-template-columns: 1fr !important; }
+      .rk-edu-grid { grid-template-columns: 1fr !important; }
+      .rk-footer-inner { flex-direction: column !important; gap: 40px !important; }
+      .rk-footer-right { align-items: flex-start !important; }
+      .rk-stat-chips { flex-wrap: wrap !important; }
+    }
+    .rk-work-track  { will-change: transform; }
+    .rk-dot-active  { background: #D4AF37 !important; box-shadow: 0 0 10px rgba(212,175,55,0.5); }
+    .rk-dot-inactive{ background: rgba(255,255,255,0.18) !important; }
+    .rk-carousel-btn{ transition: background 0.2s, border-color 0.2s, opacity 0.2s; }
+    .rk-carousel-btn:hover{ background: rgba(212,175,55,0.12) !important; border-color: rgba(212,175,55,0.3) !important; color: #D4AF37 !important; }
+    .rk-carousel-btn-off{ opacity: 0.2 !important; cursor: default !important; pointer-events: none !important; }
+    @media (max-width: 480px) {
+      .rk-timeline { padding-left: 20px !important; }
+      .rk-timeline-dot { left: -20px !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #hero * { animation: none !important; opacity: 1 !important; transform: none !important; }
+      .rk-btn-gold::after { display: none !important; }
+      .rk-hero-dot { animation: none !important; }
+    }
+
+    /* ── Shining gold ── */
+    @keyframes rk-shine-sweep {
+      0%, 18%  { transform: translateX(-180%); opacity: 0; }
+      22%      { opacity: 1; }
+      62%      { transform: translateX(320%);  opacity: 1; }
+      66%, 100%{ transform: translateX(320%);  opacity: 0; }
+    }
+    @keyframes rk-dot-glow {
+      0%, 100% { text-shadow: 0 0 8px  rgba(212,175,55,0.35), 0 0 20px rgba(212,175,55,0.15); }
+      50%      { text-shadow: 0 0 28px rgba(245,224,112,1),   0 0 56px rgba(212,175,55,0.65), 0 0 90px rgba(212,175,55,0.25); }
+    }
+    @keyframes rk-border-pulse {
+      0%, 100% { border-left-color: #D4AF37;  filter: drop-shadow(0 0 4px  rgba(212,175,55,0.3)); }
+      50%      { border-left-color: #F5E070;  filter: drop-shadow(0 0 14px rgba(245,224,112,0.7)); }
+    }
+
+    .rk-btn-gold { position: relative !important; overflow: hidden !important; }
+    .rk-btn-gold::after {
+      content: '';
+      position: absolute;
+      top: -10%; left: -40%;
+      width: 32%; height: 120%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.32), transparent);
+      animation: rk-shine-sweep 4s ease-in-out 1s infinite;
+      pointer-events: none;
+      border-radius: 9999px;
+    }
+    .rk-hero-dot  { animation: rk-dot-glow    3.5s ease-in-out infinite; display: inline; }
+    .rk-tagline   { animation: rk-border-pulse 4s   ease-in-out 0.8s infinite; }
+    .rk-no-shimmer .rk-btn-gold::after { display: none !important; }
+    .rk-no-shimmer .rk-hero-dot { animation: none !important; text-shadow: none !important; }
+    .rk-no-shimmer .rk-tagline  { animation: none !important; filter: none !important; }
+    .rk-dense-section { padding-top: 64px !important; padding-bottom: 64px !important; }
+  </style>
+</helmet>
+
+<!-- ── NAVIGATION ── -->
+<nav class="rk-nav {{ navClass }}" style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: 72px; padding: 0 clamp(24px, 6vw, 80px); display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+  <a href="#hero" style="display: flex; align-items: center; gap: 10px;">
+    <span style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #D4AF37; letter-spacing: -0.02em; line-height: 1;">RK</span>
+    <span style="width: 1px; height: 16px; background: rgba(212,175,55,0.3);"></span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.38); letter-spacing: 0.24em; text-transform: uppercase;">EMPIRES</span>
+  </a>
+  <div class="rk-nav-links" style="display: flex; align-items: center; gap: 32px;">
+    <a href="#about" class="rk-nav-link" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.16em; text-transform: uppercase;">About</a>
+    <a href="#work" class="rk-nav-link" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.16em; text-transform: uppercase;">Work</a>
+    <a href="#skills" class="rk-nav-link" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.16em; text-transform: uppercase;">Skills</a>
+    <a href="#experience" class="rk-nav-link" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.16em; text-transform: uppercase;">Experience</a>
+    <a href="#education" class="rk-nav-link" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: #fff; letter-spacing: 0.16em; text-transform: uppercase;">Education</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero" data-screen-label="Hero" style="min-height: 100vh; padding: 140px clamp(24px, 6vw, 80px) 100px; display: flex; align-items: center; background: #0D0D0D; position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212,175,55,0.07) 0%, transparent 65%); pointer-events: none;"></div>
+  <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.013) 0, rgba(255,255,255,0.013) 1px, transparent 1px, transparent 80px), repeating-linear-gradient(90deg, rgba(255,255,255,0.013) 0, rgba(255,255,255,0.013) 1px, transparent 1px, transparent 80px); pointer-events: none;"></div>
+
+  <div style="position: relative; max-width: 1200px; width: 100%; margin: 0 auto;">
+
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 28px; animation: rk-fade-up 0.7s 0.05s ease forwards;">
+      <div style="width: 28px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">AI Automation &amp; Systems Engineer</span>
+    </div>
+
+    <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2.75rem, 7vw, 5.5rem); font-weight: 700; color: #fff; letter-spacing: -0.03em; line-height: 1.04; margin-bottom: 18px; max-width: 820px; animation: rk-fade-up 0.7s 0.18s ease forwards;">
+      RK<span class="rk-hero-dot" style="color: #D4AF37;">.</span> Empires
+    </h1>
+
+    <sc-if value="{{ showSubtitle }}" hint-placeholder-val="{{ true }}">
+    <p style="font-family: 'Montserrat', sans-serif; font-size: clamp(0.72rem, 1.4vw, 0.875rem); font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 44px; animation: rk-fade-up 0.7s 0.28s ease forwards;">
+      AI Automation Specialist &nbsp;·&nbsp; IT Operations Professional
+    </p>
+    </sc-if>
+
+    <div class="rk-tagline" style="border-left: 3px solid #D4AF37; padding-left: 24px; max-width: 620px; margin-bottom: 56px; animation: rk-fade-up 0.7s 0.38s ease forwards;">
+      <p style="font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2.1vw, 1.175rem); font-style: italic; color: rgba(255,255,255,0.78); line-height: 1.72; text-wrap: pretty;">
+        I design and deploy AI automation systems that connect CRMs, APIs, and IT operations into self-running workflows for real estate and enterprise teams.
+      </p>
+    </div>
+
+    <sc-if value="{{ showChips }}" hint-placeholder-val="{{ true }}">
+    <div class="rk-stat-chips" style="display: flex; gap: 10px; flex-wrap: nowrap; margin-bottom: 60px; animation: rk-fade-up 0.7s 0.48s ease forwards;">
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; padding: 9px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; white-space: nowrap;">4 projects shipped</span>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; padding: 9px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; white-space: nowrap;">7+ years in IT &amp; automation</span>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.05em; padding: 9px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; white-space: nowrap;">Cebu-based</span>
+      <span style="font-family: 'Montserrat', sans-serif; font-size: 10.5px; font-weight: 600; color: #D4AF37; letter-spacing: 0.05em; padding: 9px 18px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.32); border-radius: 9999px; white-space: nowrap;">Arca Academy</span>
+    </div>
+    </sc-if>
+
+    <div style="animation: rk-fade-up 0.7s 0.58s ease forwards;">
+      <a href="https://rk-empires-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-btn-gold" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 38px; background: linear-gradient(135deg, #7A5507 0%, #B8860B 15%, #D4AF37 32%, #F5E070 50%, #ECC84A 60%, #D4AF37 72%, #9A6F09 88%, #C8A42A 100%); border-radius: 9999px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #0D0D0D; letter-spacing: 0.15em; text-transform: uppercase; box-shadow: 0 4px 24px rgba(212,175,55,0.32), 0 1px 0 rgba(255,255,255,0.18) inset;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Resume
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" data-screen-label="About" class="{{ sectionClass }}" style="padding: 100px clamp(24px, 6vw, 80px); background: #0D0D0D;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="margin-bottom: 64px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <div style="width: 22px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">About Me</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15;">Building systems<br/>that actually run.</h2>
+    </div>
+
+    <div class="rk-about-grid" style="display: grid; grid-template-columns: 260px 1fr; gap: 80px; align-items: start;">
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+        <div style="width: 220px; height: 220px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(212,175,55,0.45); box-shadow: 0 0 0 4px rgba(212,175,55,0.08), 0 0 40px rgba(212,175,55,0.22), 0 0 80px rgba(212,175,55,0.1); flex-shrink: 0;">
+          <img src="uploads/avatar.png" alt="Profile photo" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;">
+        </div>
+      </div>
+
+      <div>
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.64); line-height: 1.84; margin-bottom: 22px; text-wrap: pretty;">
+          I'm an AI Automation Specialist and IT Operations professional with 7+ years of experience building systems that remove repetitive work and improve how teams operate. My work spans AI workflows, API integrations, CRM automation, chatbot deployment, and enterprise IT support — with strong exposure to real estate lead marketing systems and full-stack automation pipelines.
+        </p>
+        <p style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.64); line-height: 1.84; text-wrap: pretty;">
+          I focus on building end-to-end solutions that actually run in production — not just prototypes. I enjoy connecting tools, simplifying complex processes, and turning manual operations into reliable automated systems. I'm currently looking for roles where I can build scalable automation, integration-heavy systems, and operational tools that improve business efficiency.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WORK ── -->
+<section id="work" data-screen-label="Work" class="{{ sectionClass }}" style="padding: 100px clamp(24px, 6vw, 80px); background: #080808;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="margin-bottom: 56px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <div style="width: 22px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">Work</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15;">Featured Projects</h2>
+    </div>
+
+    <div style="overflow: hidden; position: relative;">
+      <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 80px; background: linear-gradient(to right, transparent, rgba(8,8,8,0.95)); pointer-events: none; z-index: 2;"></div>
+      <div class="rk-work-track" style="display: flex; gap: 22px; transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+
+      <!-- 01 -->
+      <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
+        <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
+          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">01</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+        </div>
+        <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">01</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">AI Product Landing Page</h3>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Modern product landing page with AI-driven UX flow and embedded video hero for marketing conversion optimization.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Vercel</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">UI/UX</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Web Animation</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Product Design</span>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
+            <a href="https://rk-empires.vercel.app/" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
+        <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
+          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">02</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+        </div>
+        <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">02</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">3D Scroll Animation Experience</h3>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Interactive scroll-based animation experience showcasing advanced UI transitions and storytelling-based product navigation.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Scroll Effects</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">UX Motion</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Web Interactivity</span>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
+            <a href="https://arca-product.vercel.app/anything" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
+        <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
+          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">03</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+        </div>
+        <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">03</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">Admin Dashboard System</h3>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Admin dashboard for managing backend data, users, and system workflows with structured control and monitoring features.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Dashboard UI</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">System Design</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Admin Tools</span>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
+            <a href="https://arca-product.vercel.app/admin" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="rk-work-card" style="flex: 0 0 calc(33.333% - 15px); min-width: 0; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.45); display: flex; flex-direction: column;">
+        <div style="aspect-ratio: 16/9; background: #111; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-bottom: 1px solid rgba(255,255,255,0.04);">
+          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.014) 0, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 40px);"></div>
+          <span style="font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 700; color: rgba(212,175,55,0.12); z-index: 1; line-height: 1; position: relative;">04</span>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8px; color: rgba(255,255,255,0.14); letter-spacing: 0.2em; text-transform: uppercase; z-index: 1; position: relative;">Screenshot · Claude Code</span>
+        </div>
+        <div style="padding: 22px; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 8.5px; font-weight: 700; color: #D4AF37; letter-spacing: 0.3em; text-transform: uppercase;">04</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; margin: 0;">Contact &amp; Lead Capture Automation</h3>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.46); line-height: 1.68; margin: 0; flex: 1;">Lead capture system with form handling, CRM routing, and backend automation for real-time inquiry processing.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Form Automation</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">CRM Integration</span>
+            <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 600; color: rgba(212,175,55,0.72); background: rgba(212,175,55,0.07); border: 1px solid rgba(212,175,55,0.15); border-radius: 4px; padding: 3px 8px; letter-spacing: 0.04em;">Webhooks</span>
+          </div>
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 14px; margin-top: auto;">
+            <a href="https://arca-product.vercel.app/product#contact" target="_blank" rel="noopener noreferrer" class="rk-work-link" style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.42); display: inline-flex; align-items: center; gap: 6px; letter-spacing: 0.06em;">
+              View live <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 36px;">
+      <button type="button" onClick="{{ prevWork }}" class="{{ prevBtnClass }}" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(255,255,255,0.6);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <div class="{{ workDot0Class }}" style="width: 8px; height: 8px; border-radius: 50%; transition: all 0.3s ease;"></div>
+        <div class="{{ workDot1Class }}" style="width: 8px; height: 8px; border-radius: 50%; transition: all 0.3s ease;"></div>
+      </div>
+      <button type="button" onClick="{{ nextWork }}" class="{{ nextBtnClass }}" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(255,255,255,0.6);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+    <p style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 9.5px; color: rgba(255,255,255,0.18); letter-spacing: 0.16em; text-transform: uppercase; margin-top: 10px;">Scroll or click to navigate</p>
+
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills" data-screen-label="Skills" class="{{ sectionClass }}" style="padding: 100px clamp(24px, 6vw, 80px); background: #0D0D0D;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="margin-bottom: 56px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <div style="width: 22px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">Skills</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15;">Tech Stack</h2>
+    </div>
+
+    <div class="rk-skills-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+
+      <!-- AI & Automation -->
+      <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">AI &amp; Automation</h3>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ChatGPT / Claude AI</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">n8n</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Make</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GoHighLevel</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Zoho One</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">API Automation</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Chatbot Systems</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Workflow Design</span>
+        </div>
+      </div>
+
+      <!-- IT Operations -->
+      <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">IT Operations &amp; Systems</h3>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Active Directory / Azure</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Microsoft O365</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">ServiceNow</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Citrix / VMware</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">SAP</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">MFA Systems</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Enterprise IT Support</span>
+        </div>
+      </div>
+
+      <!-- Dev & Integrations -->
+      <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 3-7 9 7 9"/><path d="m14 3 7 9-7 9"/></svg>
+          </div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: #fff; letter-spacing: 0.02em; line-height: 1.3;">Development &amp; Integrations</h3>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px;">
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">GitHub / Replit</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Railway / Vercel</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">WordPress</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Airtable</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">API Integration</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">CRM &amp; Email Automation</span>
+          <span class="rk-tag" style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 5px 10px;">Data Syncing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience" data-screen-label="Experience" class="{{ sectionClass }}" style="padding: 100px clamp(24px, 6vw, 80px); background: #080808;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="margin-bottom: 56px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <div style="width: 22px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">Experience</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15;">Work History</h2>
+    </div>
+
+    <div class="rk-timeline" style="position: relative; padding-left: 32px; max-width: 860px;">
+      <div style="position: absolute; left: 6px; top: 12px; bottom: 12px; width: 1px; background: linear-gradient(to bottom, rgba(212,175,55,0.55) 0%, rgba(212,175,55,0.06) 100%);"></div>
+
+      <!-- Role 1 -->
+      <div style="position: relative; margin-bottom: 32px;">
+        <div class="rk-timeline-dot" style="position: absolute; left: -32px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: #D4AF37; border: 2px solid #080808; box-shadow: 0 0 14px rgba(212,175,55,0.55); z-index: 1;"></div>
+        <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+            <div>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 5px;">Freelance · Remote</span>
+              <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">GVA / AI Automation Specialist</h4>
+            </div>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Nov 2025 – May 2026</span>
+          </div>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Real Estate Lead Marketing — Built AI-driven marketing automation using GoHighLevel, n8n, Zoho, and Make. Developed API-based systems integrating Microsoft Graph, Airtable, and email automation for lead nurturing and subscription workflows.</p>
+        </div>
+      </div>
+
+      <!-- Role 2 -->
+      <div style="position: relative; margin-bottom: 32px;">
+        <div class="rk-timeline-dot" style="position: absolute; left: -32px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: rgba(212,175,55,0.65); border: 2px solid #080808; z-index: 1;"></div>
+        <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+            <div>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 5px;">Tata Consultancy Services · ITSD Global</span>
+              <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">Assistant Systems Engineer</h4>
+            </div>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Jan 2023 – Jul 2025</span>
+          </div>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Enterprise IT support across Active Directory, Azure, O365, VPN, and ServiceNow. Managed onboarding/offboarding, access control, incident resolution, and system administration for global corporate users.</p>
+        </div>
+      </div>
+
+      <!-- Role 3 -->
+      <div style="position: relative; margin-bottom: 32px;">
+        <div class="rk-timeline-dot" style="position: absolute; left: -32px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: rgba(212,175,55,0.45); border: 2px solid #080808; z-index: 1;"></div>
+        <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+            <div>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 5px;">Infosys BPM</span>
+              <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">POS Service Desk Support — SME</h4>
+            </div>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Dec 2021 – Dec 2022</span>
+          </div>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Supported NCR Aloha POS systems for enterprise clients including hardware, network, and software troubleshooting. Led escalation support and maintained technical documentation for service desk operations.</p>
+        </div>
+      </div>
+
+      <!-- Role 4 -->
+      <div style="position: relative; margin-bottom: 32px;">
+        <div class="rk-timeline-dot" style="position: absolute; left: -32px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: rgba(212,175,55,0.3); border: 2px solid #080808; z-index: 1;"></div>
+        <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+            <div>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 5px;">IBM / Kyndryl Philippines</span>
+              <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">Service Desk Support</h4>
+            </div>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Mar 2021 – Nov 2021</span>
+          </div>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Provided IT support for corporate users covering SAP, Active Directory, and remote access systems. Resolved incidents, password issues, and access requests through ServiceNow ticketing.</p>
+        </div>
+      </div>
+
+      <!-- Role 5 -->
+      <div style="position: relative;">
+        <div class="rk-timeline-dot" style="position: absolute; left: -32px; top: 10px; width: 13px; height: 13px; border-radius: 50%; background: rgba(212,175,55,0.2); border: 2px solid #080808; z-index: 1;"></div>
+        <div style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 22px 24px;">
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 10px;">
+            <div>
+              <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 5px;">Sitel Philippines</span>
+              <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3;">Technical Support Representative</h4>
+            </div>
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; color: rgba(255,255,255,0.34); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 9999px; padding: 5px 14px; white-space: nowrap; flex-shrink: 0;">Feb 2018 – Mar 2021</span>
+          </div>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.44); line-height: 1.72;">Delivered B2C and B2B technical support for antivirus and CRM platforms. Assisted users with system troubleshooting, CRM setup, email workflows, and connectivity issues.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education" data-screen-label="Education" class="{{ sectionClass }}" style="padding: 100px clamp(24px, 6vw, 80px); background: #0D0D0D;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <div style="margin-bottom: 56px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <div style="width: 22px; height: 1px; background: #D4AF37; flex-shrink: 0;"></div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; color: #D4AF37; letter-spacing: 0.26em; text-transform: uppercase;">Education</span>
+      </div>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 700; color: #fff; line-height: 1.15;">Credentials</h2>
+    </div>
+
+    <div class="rk-edu-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+
+      <!-- Degree -->
+      <div class="rk-edu-card" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.45);">
+        <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 8px;">Bachelor's Degree</span>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 6px;">BS Computer Technology</h4>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.55;">Eulogio "Amang" Rodriguez Institute of Science and Technology</p>
+        </div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; color: rgba(255,255,255,0.24); margin-top: auto; letter-spacing: 0.05em;">2013 – 2018</span>
+      </div>
+
+      <!-- CCNA 1 -->
+      <div class="rk-edu-card" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.45);">
+        <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 8px;">Certification</span>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 6px;">CCNA 200-301</h4>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.55;">Tech Academy by Billy Ramirez</p>
+        </div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; color: rgba(255,255,255,0.24); margin-top: auto; letter-spacing: 0.05em;">CCNA Bootcamp</span>
+      </div>
+
+      <!-- CCNA 2 -->
+      <div class="rk-edu-card" style="background: #1A1A1A; border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.45);">
+        <div style="width: 42px; height: 42px; border-radius: 10px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.22); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div>
+          <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: #D4AF37; letter-spacing: 0.24em; text-transform: uppercase; display: block; margin-bottom: 8px;">Certification</span>
+          <h4 style="font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 6px;">CCNA Bootcamp</h4>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: rgba(255,255,255,0.42); line-height: 1.55;">5GITTC Computer Training School</p>
+        </div>
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 11px; color: rgba(255,255,255,0.24); margin-top: auto; letter-spacing: 0.05em;">Network Fundamentals</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer style="padding: 56px clamp(24px, 6vw, 80px); background: #141414; border-top: 1px solid rgba(255,255,255,0.05);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="rk-footer-inner" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 48px;">
+
+      <!-- Left: Nav links -->
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 700; color: rgba(212,175,55,0.55); letter-spacing: 0.26em; text-transform: uppercase; margin-bottom: 4px;">Navigate</span>
+        <a href="#hero" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">Top</a>
+        <a href="#about" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">About</a>
+        <a href="#work" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">Work</a>
+        <a href="#skills" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">Skills</a>
+        <a href="#experience" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">Experience</a>
+        <a href="#education" class="rk-footer-link" style="font-family: 'Montserrat', sans-serif; font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.04em;">Education</a>
+      </div>
+
+      <!-- Right: Copyright + Arca -->
+      <div class="rk-footer-right" style="display: flex; flex-direction: column; align-items: flex-end; gap: 20px;">
+
+
+
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;">
+          <img src="uploads/pasted-1782125391007-0.png" alt="Arca logo" style="height: 38px; width: auto; object-fit: contain;">
+          <div>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.06em;">Made for Arca.ph</p>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 0.04em; margin-top: 2px;">Arca Academy Capstone</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;shimmer&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;
+  },
+  &quot;heroStyle&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;default&quot;: &quot;full&quot;,
+    &quot;options&quot;: [&quot;full&quot;, &quot;compact&quot;],
+    &quot;tsType&quot;: &quot;\&quot;full\&quot; | \&quot;compact\&quot;&quot;
+  },
+  &quot;sectionSpacing&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;default&quot;: &quot;comfortable&quot;,
+    &quot;options&quot;: [&quot;comfortable&quot;, &quot;dense&quot;],
+    &quot;tsType&quot;: &quot;\&quot;comfortable\&quot; | \&quot;dense\&quot;&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { scrolled: false, workIndex: 0 };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 70;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._applyShimmer();
+    this._setupCarousel();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this._applyShimmer();
+    if (prevState.workIndex !== this.state.workIndex) this._animateTrack();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('wheel', this._onWheel);
+    document.body.classList.remove('rk-no-shimmer');
+  }
+
+  _applyShimmer() {
+    document.body.classList.toggle('rk-no-shimmer', this.props.shimmer === false);
+  }
+
+  _animateTrack() {
+    const track = document.querySelector('.rk-work-track');
+    if (!track) return;
+    const card = track.querySelector('.rk-work-card');
+    if (!card) return;
+    const offset = this.state.workIndex * (card.offsetWidth + 22);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  _setupCarousel() {
+    let last = 0;
+    this._onWheel = (e) => {
+      const section = document.getElementById('work');
+      if (!section) return;
+      const r = section.getBoundingClientRect();
+      if (r.top > window.innerHeight * 0.75 || r.bottom < window.innerHeight * 0.25) return;
+      const now = Date.now();
+      if (now - last < 700) return;
+      last = now;
+      const dir = e.deltaY > 0 ? 1 : -1;
+      const next = Math.max(0, Math.min(1, this.state.workIndex + dir));
+      if (next !== this.state.workIndex) this.setState({ workIndex: next });
+    };
+    window.addEventListener('wheel', this._onWheel, { passive: true });
+  }
+
+  renderVals() {
+    const compact = this.props.heroStyle === 'compact';
+    const dense   = this.props.sectionSpacing === 'dense';
+    const { workIndex } = this.state;
+    return {
+      navClass:      this.state.scrolled ? 'rk-scrolled' : '',
+      showSubtitle:  !compact,
+      showChips:     !compact,
+      sectionClass:  dense ? 'rk-dense-section' : '',
+      prevWork:      () => this.setState(s => ({ workIndex: Math.max(0, s.workIndex - 1) })),
+      nextWork:      () => this.setState(s => ({ workIndex: Math.min(1, s.workIndex + 1) })),
+      prevBtnClass:  'rk-carousel-btn' + (workIndex === 0 ? ' rk-carousel-btn-off' : ''),
+      nextBtnClass:  'rk-carousel-btn' + (workIndex === 1 ? ' rk-carousel-btn-off' : ''),
+      workDot0Class: workIndex === 0 ? 'rk-dot-active' : 'rk-dot-inactive',
+      workDot1Class: workIndex === 1 ? 'rk-dot-active' : 'rk-dot-inactive',
+    };
+  }
+}
+</script>
+</body>
+</html>

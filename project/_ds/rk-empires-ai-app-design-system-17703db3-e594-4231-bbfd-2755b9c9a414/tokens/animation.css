@@ -1,0 +1,81 @@
+/* ============================================================
+   RK Empires — Animation Tokens
+   ============================================================ */
+
+:root {
+  /* ── Durations ── */
+  --dur-instant:  50ms;  /* @kind other */
+  --dur-fast:     150ms; /* @kind other */
+  --dur-normal:   250ms; /* @kind other */
+  --dur-slow:     400ms; /* @kind other */
+  --dur-slower:   600ms; /* @kind other */
+  --dur-page:     350ms; /* @kind other */
+
+  /* ── Easing ── */
+  --ease-linear:  linear;                               /* @kind other */
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);           /* @kind other */
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);           /* @kind other */
+  --ease-inout:   cubic-bezier(0.4, 0, 0.2, 1);         /* @kind other */
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);    /* @kind other */
+  --ease-smooth:  cubic-bezier(0.22, 1, 0.36, 1);       /* @kind other */
+  --ease-bounce:  cubic-bezier(0.68, -0.55, 0.27, 1.55);/* @kind other */
+
+  /* ── Semantic Transitions ── */
+  --transition-fast:      var(--dur-fast)   var(--ease-inout); /* @kind other */
+  --transition-normal:    var(--dur-normal) var(--ease-inout); /* @kind other */
+  --transition-slow:      var(--dur-slow)   var(--ease-smooth);/* @kind other */
+  --transition-spring:    var(--dur-normal) var(--ease-spring);/* @kind other */
+  --transition-color:     color var(--dur-fast) var(--ease-inout),
+                          background-color var(--dur-fast) var(--ease-inout),
+                          border-color var(--dur-fast) var(--ease-inout); /* @kind other */
+  --transition-shadow:    box-shadow var(--dur-normal) var(--ease-inout); /* @kind other */
+  --transition-transform: transform var(--dur-fast) var(--ease-spring);  /* @kind other */
+}
+
+/* ── Keyframe library ── */
+
+@keyframes rk-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes rk-slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rk-slide-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rk-scale-in {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rk-bounce-in {
+  0%   { opacity: 0; transform: scale(0.7); }
+  60%  { transform: scale(1.08); }
+  80%  { transform: scale(0.97); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rk-pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(212,175,55,0.25); }
+}
+
+@keyframes rk-shimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+@keyframes rk-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rk-streak-fire {
+  0%, 100% { transform: scaleY(1) rotate(-1deg); }
+  50%       { transform: scaleY(1.06) rotate(1deg); }
+}

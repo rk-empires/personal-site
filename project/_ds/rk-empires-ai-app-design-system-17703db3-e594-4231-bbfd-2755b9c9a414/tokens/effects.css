@@ -1,0 +1,48 @@
+/* ============================================================
+   RK Empires — Effects Tokens
+   Shadows, glows, blur, gradients
+   ============================================================ */
+
+:root {
+  /* ── Shadows ── */
+  --shadow-xs:       0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-sm:       0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-md:       0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-lg:       0 8px 40px rgba(0, 0, 0, 0.7);
+  --shadow-xl:       0 16px 64px rgba(0, 0, 0, 0.8);
+
+  /* ── Gold Glow ── */
+  --glow-gold-xs:  0 0 8px  rgba(212, 175, 55, 0.25);
+  --glow-gold-sm:  0 0 16px rgba(212, 175, 55, 0.35);
+  --glow-gold-md:  0 0 32px rgba(212, 175, 55, 0.45);
+  --glow-gold-lg:  0 0 60px rgba(212, 175, 55, 0.5);
+
+  /* ── Card Shadows ── */
+  --shadow-card:          0 2px 12px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.04) inset;
+  --shadow-card-hover:    0 4px 24px rgba(0,0,0,0.6), var(--glow-gold-xs);
+  --shadow-card-gold:     0 4px 20px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.3);
+  --shadow-button:        0 2px 8px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.1) inset;
+  --shadow-button-press:  0 1px 4px rgba(0,0,0,0.5);
+
+  /* ── Gradients ── */
+  --gradient-gold:        linear-gradient(135deg, #F0D060 0%, #D4AF37 40%, #B8860B 100%); /* @kind other */
+  --gradient-gold-subtle: linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(184,134,11,0.08) 100%); /* @kind other */
+  --gradient-dark:        linear-gradient(180deg, #1A1A1A 0%, #0D0D0D 100%); /* @kind other */
+  --gradient-dark-up:     linear-gradient(0deg, #0D0D0D 0%, transparent 100%); /* @kind other */
+  --gradient-card-shine:  linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 50%); /* @kind other */
+  --gradient-surface:     linear-gradient(180deg, #252525 0%, #1A1A1A 100%); /* @kind other */
+  --gradient-hero:        linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 60%, #141414 100%); /* @kind other */
+
+  /* ── Backdrop Blur ── */
+  --blur-sm:  blur(4px);   /* @kind other */
+  --blur-md:  blur(12px);  /* @kind other */
+  --blur-lg:  blur(24px);  /* @kind other */
+  --blur-xl:  blur(40px);  /* @kind other */
+
+  /* ── Border Styles ── */
+  --border-card:        1px solid rgba(255,255,255,0.07); /* @kind other */
+  --border-card-gold:   1px solid rgba(212,175,55,0.3);   /* @kind other */
+  --border-input:       1px solid rgba(255,255,255,0.12); /* @kind other */
+  --border-input-focus: 1px solid #D4AF37;                /* @kind other */
+  --border-divider:     1px solid rgba(255,255,255,0.06); /* @kind other */
+}

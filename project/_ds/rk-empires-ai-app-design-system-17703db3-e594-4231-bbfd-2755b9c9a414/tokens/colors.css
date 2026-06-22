@@ -1,0 +1,80 @@
+/* ============================================================
+   RK Empires — Color Tokens
+   Brand: Black/Gold premium, tech-forward
+   ============================================================ */
+
+:root {
+  /* ── Brand Gold ── */
+  --color-gold-50:  #FDF8E7;
+  --color-gold-100: #F9EDB8;
+  --color-gold-200: #F4DC7A;
+  --color-gold-300: #ECC84A;
+  --color-gold-400: #D4AF37;   /* Primary Gold */
+  --color-gold-500: #B8860B;   /* Deep Gold */
+  --color-gold-600: #9A6F09;
+  --color-gold-700: #7A5507;
+  --color-gold-800: #5A3D05;
+  --color-gold-900: #3A2703;
+
+  /* ── Neutral / Dark ── */
+  --color-neutral-0:   #FFFFFF;
+  --color-neutral-50:  #F8F8F8;
+  --color-neutral-100: #E6E6E6;
+  --color-neutral-200: #CCCCCC;
+  --color-neutral-300: #AAAAAA;
+  --color-neutral-400: #888888;
+  --color-neutral-500: #666666;
+  --color-neutral-600: #444444;
+  --color-neutral-700: #2A2A2A;
+  --color-neutral-800: #1A1A1A;
+  --color-neutral-900: #0D0D0D;  /* Brand Black */
+  --color-neutral-950: #070707;
+
+  /* ── Functional ── */
+  --color-success:      #22C55E;
+  --color-success-dim:  rgba(34, 197, 94, 0.15);
+  --color-error:        #EF4444;
+  --color-error-dim:    rgba(239, 68, 68, 0.15);
+  --color-warning:      #F59E0B;
+  --color-warning-dim:  rgba(245, 158, 11, 0.15);
+  --color-info:         #3B82F6;
+  --color-info-dim:     rgba(59, 130, 246, 0.15);
+
+  /* ── Gamification Levels ── */
+  --color-level-rookie:       #8B7355;   /* warm bronze */
+  --color-level-beginner:     #C0C0C0;   /* silver */
+  --color-level-intermediate: #D4AF37;   /* gold */
+  --color-level-advanced:     #00CED1;   /* dark turquoise */
+  --color-level-expert:       #9B59B6;   /* amethyst */
+  --color-level-master:       #E74C3C;   /* ruby */
+
+  /* ── Semantic Surface ── */
+  --surface-base:      #0D0D0D;
+  --surface-raised:    #141414;
+  --surface-card:      #1A1A1A;
+  --surface-elevated:  #252525;
+  --surface-overlay:   rgba(0, 0, 0, 0.75);
+
+  /* ── Semantic Text ── */
+  --text-primary:   #FFFFFF;
+  --text-secondary: #E6E6E6;
+  --text-muted:     #888888;
+  --text-disabled:  #444444;
+  --text-accent:    #D4AF37;
+  --text-inverse:   #0D0D0D;
+
+  /* ── Semantic Accent ── */
+  --accent-primary:   #D4AF37;
+  --accent-hover:     #ECC84A;
+  --accent-press:     #B8860B;
+  --accent-subtle:    rgba(212, 175, 55, 0.12);
+  --accent-dim:       rgba(212, 175, 55, 0.25);
+  --accent-border:    rgba(212, 175, 55, 0.4);
+
+  /* ── Borders ── */
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.12);
+  --border-strong:  rgba(255, 255, 255, 0.24);
+  --border-accent:  rgba(212, 175, 55, 0.5);
+  --border-gold:    #D4AF37;
+}
