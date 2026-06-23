@@ -165,6 +165,48 @@
       .rk-pan-img     { animation: none !important; object-position: center top !important; }
     }
     .rk-screenshot-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+
+    /* ===================================================================
+       CENTERED LAYOUT — center all section content, desktop + mobile
+       =================================================================== */
+    html, body { overflow-x: hidden; max-width: 100%; }
+    section, footer { text-align: center; }
+
+    /* Eyebrow rows (gold line + label) and card-header icon+title rows */
+    section [style*="align-items: center"][style*="gap: 12px"] { justify-content: center !important; flex-wrap: wrap; }
+
+    /* Hero */
+    #hero h1, #hero > div > p, #hero .rk-tagline { margin-left: auto !important; margin-right: auto !important; }
+    #hero .rk-tagline { border-left: none !important; padding-left: 0 !important; max-width: 640px; }
+    .rk-stat-chips { justify-content: center !important; flex-wrap: wrap !important; }
+
+    /* About — single centered column */
+    .rk-about-grid { grid-template-columns: 1fr !important; max-width: 760px; margin-left: auto !important; margin-right: auto !important; gap: 36px !important; justify-items: center; }
+    .rk-about-grid p { max-width: 680px; margin-left: auto; margin-right: auto; }
+
+    /* Work — center tile content + tag rows */
+    #work [style*="flex-wrap: wrap"] { justify-content: center !important; }
+
+    /* Skills — center tag rows */
+    #skills [style*="flex-wrap: wrap"] { justify-content: center !important; }
+
+    /* Briefing details — center tag row */
+    #briefing-details [style*="flex-wrap: wrap"] { justify-content: center !important; }
+
+    /* Experience — centered stack, drop the left timeline rail */
+    .rk-timeline { padding-left: 0 !important; max-width: 760px; margin-left: auto !important; margin-right: auto !important; }
+    .rk-timeline > div:first-child { display: none !important; }   /* vertical rail */
+    .rk-timeline-dot { display: none !important; }
+    #experience [style*="justify-content: space-between"] { flex-direction: column !important; align-items: center !important; justify-content: center !important; }
+    #experience [style*="flex-wrap: wrap"] { justify-content: center !important; }
+
+    /* Education — center card contents (icon + text) */
+    .rk-edu-card { align-items: center !important; }
+
+    /* Footer — stacked & centered */
+    .rk-footer-inner { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center; }
+    .rk-footer-inner > div { align-items: center !important; }
+    .rk-footer-right { align-items: center !important; }
   </style>
 </head>
 <body>
